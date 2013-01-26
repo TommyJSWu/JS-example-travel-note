@@ -1,0 +1,113 @@
+body
+{
+    overflow: hidden;
+}
+#wrapper
+{
+    width: 480px;
+    margin: 20px auto;
+}
+.travel-unit
+{
+    display: inline-block;
+    width: 480px;
+    background: white;
+
+    border: 20px solid #89F0EE;
+    padding: 15px 10px;
+    position: absolute;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+
+    transition: .5s;
+    -webkit-transition: .5s;
+}
+.travel-unit h1
+{
+    font-weight: 100;
+    color: #89E0DD;
+    font-size: 52px;
+    font-family: 'Advent Pro', 'Century Gothic', sans-serif;
+
+    padding-bottom: 5px;
+    border-bottom: 1px solid #EEE;
+}
+.travel-unit .description
+{
+    color: #999;
+    font-family: 'Advent Pro', sans-serif;
+    height: 80px;
+    font-size: 14px;
+
+    overflow: auto;
+    margin: 10px 0 10px 0;
+}
+.travel-unit .play-route-div
+{
+    color: #999;
+    font-size: 14px;
+    font-family: 'Advent Pro', sans-serif;
+    margin-bottom: 5px;
+}
+.travel-unit .play-route-div a
+{
+    text-decoration: none;
+    color: #999;
+
+    transition: .5s;
+    -webkit-transition: .5s;
+}
+.travel-unit .play-route-div a:hover
+{
+    color: #555;
+}
+.travel-unit .map-canvas
+{
+    width: 100%;
+    height: 400px;
+}
+.pre-other
+{
+    transform: scale(.5) translateX(-3000px);
+    -webkit-transform: scale(.5) translateX(-3000px);
+    opacity: 0;
+}
+.pre-pre-current
+{
+    transform: scale(.5) translateX(-900px);
+    -webkit-transform: scale(.5) translateX(-900px);
+    opacity: .3 !important;
+    z-index: 1;
+}
+.pre-current
+{
+    transform: scale(.8) translateX(-300px);
+    -webkit-transform: scale(.8) translateX(-300px);
+    opacity: .5 !important;
+    z-index: 9;
+}
+.current
+{
+    opacity: 1 !important;
+    z-index: 9999;
+}
+.post-current
+{
+    transform: scale(.8) translateX(300px);
+    -webkit-transform: scale(.8) translateX(300px);
+    opacity: .5 !important;
+    z-index: 9;
+}
+.post-post-current
+{
+    transform: scale(.5) translateX(900px);
+    -webkit-transform: scale(.5) translateX(900px);
+    opacity: .3 !important;
+    z-index: 1;
+}
+.post-other
+{
+    transform: scale(.5) translateX(3000px);
+    opacity: 0;
+}
