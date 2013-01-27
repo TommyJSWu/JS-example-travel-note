@@ -155,7 +155,9 @@ $window.on('keydown', function(e)
 
 function showNext()
 {
-    $current_trip.find('.map-canvas').html('').transition({ background: 'white' }, 400, function()
+    var $map_canvas = $current_trip.find('.map-canvas');
+    $map_canvas.empty();
+    $map_canvas.stop().transition({ background: 'white' }, 400, function()
     {
         $current_trip.removeClass('current').addClass('pre-current').
                       prev().removeClass('pre-current').addClass('pre-pre-current').
@@ -167,13 +169,15 @@ function showNext()
 
         $current_trip = $current_trip.next();
         current_item ++;
-        setTimeout( function() { initGoogleMap($current_trip.find('.map-canvas').get(0)) }, 500);
+        initGoogleMap($current_trip.find('.map-canvas').get(0));
     });
 }
 
 function showPrev()
 {
-    $current_trip.find('.map-canvas').html('').transition({ background: 'white' }, 400, function()
+    var $map_canvas = $current_trip.find('.map-canvas');
+    $map_canvas.empty();
+    $map_canvas.stop().transition({ background: 'white' }, 400, function()
     {
         $current_trip.prev().removeClass('pre-current').addClass('current').
                       prev().removeClass('pre-pre-current').addClass('pre-current').
@@ -185,7 +189,7 @@ function showPrev()
 
         $current_trip = $current_trip.prev();
         current_item --;
-        setTimeout(function() { initGoogleMap($current_trip.find('.map-canvas').get(0)) }, 500);
+        initGoogleMap($current_trip.find('.map-canvas').get(0));
     });
 }
 
@@ -214,10 +218,4 @@ function showList()
     $current_trip.next().addClass('post-current').next().addClass('post-post-current').nextAll().addClass('post-other');
     initGoogleMap($current_trip.find('.map-canvas').get(0));
 }
-
-function moveTo(idx)
-{
-    current_item = idx;
-}
-
 
